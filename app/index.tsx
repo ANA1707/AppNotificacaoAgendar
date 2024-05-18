@@ -12,7 +12,8 @@ Notifications.setNotificationHandler({
 });
  Notifications.addNotificationResponseReceivedListener(response =>{
   const uri = response.notification.request.content.data.uri;
-if (uri){
+  console.log('Received notification with uri:', uri);
+  if (uri){
   Linking.openURL(uri).catch(err => console.error('Error ao abrir:', err));
 }
 
